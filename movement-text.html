@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movement Text Effect</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            text-align: center;
+            width: 200px;
+            margin: 100px auto;
+        }
+        .movement-text{
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            color: white;
+            background-color: #1976D2;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .movement-text::after{
+            content: 'Movement Text';
+            position: absolute;
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+
+            top: 100%;
+            left: 0;
+            transition: all ease-in-out 1000ms;
+        }
+        .movement-text-span{
+            position: absolute;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            left: 0;
+            top: 0;
+            transition: all ease-in-out 1000ms;
+        }
+        .movement-text:hover .movement-text-span{
+            transform: translateY(-100%);
+        }
+        .movement-text:hover::after{
+            transform: translateY(-100%);
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <button class="movement-text">
+        <span class="movement-text-span">Click Me</span>
+    </button>
+</div>
+</body>
+</html>
